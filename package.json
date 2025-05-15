@@ -3,16 +3,15 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "docker compose --env-file .env up -d --build",
-    "render-start": "node ./bin/www",
-    "restart": "docker compose --env-file .env up --force-recreate --build -d",
-    "stop": "docker compose --env-file .env stop",
-    "clean": "docker compose --env-file .env down -v",
-    "dev": "nodemon ./bin/www",
-    "test:unit": "node --experimental-vm-modules node_modules/.bin/jest --config ./jest.config.js --coverage --roots ./test/unit",
-    "test:integration": "node --experimental-vm-modules node_modules/.bin/jest --testSequencer=./test/sequencer -i --config ./jest.config.js --coverage --roots ./test/integration",
-    "init:schema": "typeorm schema:sync -d ./db/data-source.js"
-  },
+  "start": "node ./bin/www",
+  "dev": "nodemon ./bin/www",
+  "restart": "docker compose --env-file .env up --force-recreate --build -d",
+  "stop": "docker compose --env-file .env stop",
+  "clean": "docker compose --env-file .env down -v",
+  "test:unit": "node --experimental-vm-modules node_modules/.bin/jest --config ./jest.config.js --coverage --roots ./test/unit",
+  "test:integration": "node --experimental-vm-modules node_modules/.bin/jest --testSequencer=./test/sequencer -i --config ./jest.config.js --coverage --roots ./test/integration",
+  "init:schema": "typeorm schema:sync -d ./db/data-source.js"
+  }
   "keywords": [],
   "author": "",
   "license": "ISC",
